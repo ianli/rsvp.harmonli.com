@@ -80,13 +80,14 @@
     }
 
     .input-submit {
+      display: inline-block;
       padding: 16px 24px;
       font-family: 'Mission Gothic';
-      font-size: 24px;
+      font-size: 32px;
       text-transform: uppercase;
       color: #FB561D;
-      background-color: #fff;
-      border: none;
+      background-color: transparent;
+      border: 4px solid #FB561D;
     }
 
     .input-label {
@@ -344,10 +345,12 @@
 
         <div class="space-64"></div>
 
-        <input
-            type="submit"
-            value="Send to Beth & Ian"
-            class="input-submit" />
+        <p>
+          <input
+              type="submit"
+              value="Send to Beth & Ian"
+              class="input-submit" />
+        </p>
 
         <div class="space-80"></div>
 
