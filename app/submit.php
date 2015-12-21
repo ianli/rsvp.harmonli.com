@@ -23,6 +23,14 @@
   if (in_array('selfie', $_FILES)) {
     $selfie['name'] = $_FILES['selfie']['name'];
     $selfie['data'] = file_get_contents($_FILES['selfie']['tmp_name']);
+    $selfie['size'] = $_FILES['selfie']['size'];
+
+    // If selfie size is more than 5MB...
+    if ($selfie['size'] > 5242880) {
+      $error_message = 'Size of selfie picture is too big (more than 5MB).';
+      include 'views/error.php';
+      exit;
+    }
   }
 
   $email_message = <<<EMAIL
@@ -51,7 +59,12 @@ EMAIL;
     $message->send();
 
     include 'views/thankyou.php';
-  } catch (InvalidArgumentException $e) {
-    echo $e;
+  } catch (Exception $e) {
+    $error_message = <<<HTML
+The following error occurred when sending to Beth &amp; Ian:<br><br>
+$e
+HTML;
+
+    include 'views/error.php';
   }
 ?>
