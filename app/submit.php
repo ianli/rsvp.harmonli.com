@@ -20,7 +20,8 @@
   $email_message = '';
 
   $selfie = [];
-  if (array_key_exists('selfie', $_FILES)) {
+  if (isset($_FILES['selfie']) && isset($_FILES['selfie']['tmp_name'])
+      && is_uploaded_file($_FILES['selfie']['tmp_name'])) {
     $selfie['name'] = $_FILES['selfie']['name'];
     $selfie['tmp_name'] = $_FILES['selfie']['tmp_name'];
     $selfie['data'] = file_get_contents($selfie['tmp_name']);
