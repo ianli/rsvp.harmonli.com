@@ -28,6 +28,7 @@
       action="<?php echo $upload_url ?>"
       method="POST"
       enctype="multipart/form-data"
+      id="form-rsvp"
       class="container">
 
     <div class="row">
@@ -39,14 +40,15 @@
     <div class="row">
       <div class="col-xs-12 col-sm-9">
         <div class="leadquote">
-          Kindly respond by February 29, 2016
+          Kindly respond by February 29, 2016.<br>
+          First 20 will receive a prize in the mail.
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12">
-        <h2>Write your name(s)</h2>
+        <h2 id="guest-field">Write your name(s)</h2>
 
         <div class="space-32"></div>
 
@@ -54,6 +56,7 @@
           <input
               type="text"
               name="guest1"
+              id="guest1"
               class="input-text" />
 
           <span class="space-8"></span>
@@ -61,12 +64,13 @@
           <input
               type="text"
               name="guest2"
+              id="guest2"
               class="input-text" />
         </p>
 
         <div class="space-64"></div>
 
-        <h2>Are you coming?</h2>
+        <h2 id="coming-field">Are you coming?</h2>
 
         <div class="space-32"></div>
 
@@ -104,7 +108,7 @@
 
         <div class="space-64"></div>
 
-        <h2>Meal Preference</h2>
+        <h2 id="meal-field">Meal Preference</h2>
 
         <div class="space-24"></div>
 
@@ -161,12 +165,13 @@
           <input
               type="text"
               name="dietary_restrictions"
+              id="dietary_restrictions"
               class="input-text" />
         </p>
 
         <div class="space-64"></div>
 
-        <h2>Sunday brunch too?</h2>
+        <h2 id="brunch-field">Sunday brunch too?</h2>
 
         <div class="space-24"></div>
 
@@ -222,9 +227,9 @@
                 src="/images/camera.svg" />
 
             <input
-                id="input-selfie"
                 type="file"
                 name="selfie"
+                id="input-selfie"
                 accept="image/*" />
           </div>
           <div class="col-xs-12 col-sm-9">
@@ -251,6 +256,7 @@
           <input
               type="text"
               name="song"
+              id="song"
               class="input-text" />
         </p>
 
@@ -286,6 +292,7 @@
             .change();
       });
 
+      // Handle click and change on the radio inputs.
       $('.radio-wrapper > input')
         .click(function(event) {
           // Stop propagation,
@@ -318,16 +325,46 @@
           });
         });
 
+      // Handle click on the selfie icon.
       $('#input-selfie-icon').click(function() {
         $('#input-selfie').click();
       });
 
+      // Handle change on the selfie file input.
       $('#input-selfie').change(function(event) {
         var reader = new FileReader();
         reader.onload = function() {
           $('#input-selfie-icon').attr('src', reader.result);
         };
         reader.readAsDataURL(event.target.files[0]);
+      });
+
+      $('#form-rsvp').submit(function(event) {
+        if (!$('input[name=guest1]').val()) {
+          location.hash = 'guest-field';
+          alert('You must write at least one name.');
+          return false;
+        }
+
+        if (!$('input[name=coming]:checked').val()) {
+          location.hash = 'coming-field';
+          alert('You must answer whether you\'re coming or not.');
+          return false;
+        }
+
+        if (!$('input[name=meal_beef]').val() &&
+            !$('input[name=meal_fish]').val() &&
+            !$('input[name=meal_veggie]').val()) {
+          location.hash = 'meal-field';
+          alert('You must select a meal for each guest.');
+          return false;
+        }
+
+        if (!$('input[name=brunch]:checked').val()) {
+          location.hash = 'brunch-field';
+          alert('You must answer whether you\'re attending brunch.');
+          return false;
+        }
       });
     });
   </script>
