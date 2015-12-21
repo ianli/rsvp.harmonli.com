@@ -5,36 +5,37 @@
 
   use \google\appengine\api\mail\Message;
 
+  $submitted = filter_var_array($_POST, FILTER_SANITIZE_SPECIAL_CHARS);
+
+  $guest1 = $submitted['guest1'] || '';
+  $guest2 = $submitted['guest2'] || '';
+  $coming = $submitted['coming'] || '';
+  $meal_beef = $submitted['meal_beef'] || '';
+  $meal_fish = $submitted['meal_fish'] || '';
+  $meal_veggie = $submitted['meal_veggie'] || '';
+  $dietary_restrictions = $submitted['dietary_restrictions'] || '';
+  $brunch = $submitted['brunch'] || '';
+  $song = $submitted['song'] || '';
+
   $email_message = '';
 
-  $fields = array();
-  if (array_key_exists('__FIELDS__', $_POST)) {
-    $fields = preg_split("/\s*,\s*/", $_POST['__FIELDS__']);
+  $selfie = [];
+  if (in_array('selfie', $_FILES)) {
+    $selfie['name'] = $_FILES['selfie']['name'];
+    $selfie['data'] = file_get_contents($_FILES['selfie']['tmp_name']);
   }
 
-  foreach ($fields as $field) {
-    $email_message .= $field . ': ' . $_POST[$field] . "\n";
-  }
-
-  foreach ($_POST as $key => $value) {
-    if ($key == '__FIELDS__' || in_array($key, $fields)) {
-      continue;
-    }
-
-    $email_message .= $key . ': ' . $value . "\n";
-  }
-
-  $files = array();
-  foreach ($_FILES as $key => $value) {
-    if (!in_array($key, $fields)) {
-      continue;
-    }
-
-    $files[] = array(
-          'name' => $value['name'],
-          'data' => file_get_contents($value['tmp_name'])
-        );
-  }
+  $email_message = <<<EMAIL
+guest1: {$submitted['guest1']}
+guest2: {$submitted['guest2']}
+coming: {$submitted['coming']}
+meal_beef: {$submitted['meal_beef']}
+meal_fish: {$submitted['meal_fish']}
+meal_veggie: {$submitted['meal_veggie']}
+dietary_restrictions: {$submitted['dietary_restrictions']}
+brunch: {$submitted['brunch']}
+song: {$submitted['song']}
+EMAIL;
 
   try {
     $message = new Message();
@@ -43,11 +44,13 @@
     $message->setSubject("RSVP to Beth & Ian's Wedding");
     $message->setTextBody($email_message);
 
-    foreach ($files as $file) {
-      $message->addAttachment($file['name'], $file['data']);
+    if (!empty($selfie)) {
+      $message->addAttachment($selfie['name'], $selfie['data']);
     }
 
     $message->send();
+
+    include 'views/thankyou.php';
   } catch (InvalidArgumentException $e) {
     echo $e;
   }
