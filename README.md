@@ -13,7 +13,11 @@ This will install Node packages listed in package.json
 
 ## Change GCloud account
 
-## Prompt for email to use
+## Deploying to App Engine
+
+    gulp gae_deploy
+
+Or:
 
     appcfg.py --no_cookies -A s~rsvp-harmonli update app.yaml
 

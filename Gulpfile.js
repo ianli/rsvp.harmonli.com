@@ -22,6 +22,8 @@ gulp.task('gae_deploy', function() {
   gulp.src('./app.yaml')
     .pipe(gae('appcfg.py', ['update'], {
       // appcfg.py parameters go here.
+      // https://cloud.google.com/appengine/docs/python/tools/uploadinganapp?hl=en#Python_Command-line_arguments
+      no_cookies: undefined
     }));
 });
 
