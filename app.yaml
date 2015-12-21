@@ -1,0 +1,32 @@
+application: rsvp-harmonli
+version: 1
+runtime: php55
+api_version: 1
+threadsafe: yes
+
+# Handlers go from specific to general.
+handlers:
+
+# http://stackoverflow.com/questions/21173168/google-app-engine-and-ttf-font-not-working
+- url: /(.+)\.map
+  mime_type: application/json
+  static_files: content/\1.map
+  upload: content/(.+)\.map
+
+- url: /(.+)\.(css|eot|gif|html|ico|jpeg|jpg|js|json|png|pdf|svg|tiff|ttf|webp|woff)
+  static_files: content/\1.\2
+  upload: content/(.+)\.(css|eot|gif|html|ico|jpeg|jpg|js|json|png|pdf|svg|tiff|ttf|webp|woff)
+  application_readable: true
+
+- url: /
+  script: app/rsvp.php
+
+- url: /submit
+  script: app/submit.php
+
+skip_files:
+- \.gitignore
+- ^\.git/.*
+- ^Gulpfile.js
+- ^node_modules/.*
+- ^package.json
