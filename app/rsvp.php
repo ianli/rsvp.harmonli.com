@@ -18,98 +18,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
   <link rel="stylesheet" href="http://wedding.harmonli.com/fonts/mission-gothic/stylesheet.css">
   <link rel="stylesheet" href="http://wedding.harmonli.com/css/main.css">
-  <style>
-    /**
-     * Red    #FB561D
-     * Blue   #375066
-     * Yellow #FFCA48
-     */
-
-    .input-text {
-      padding: 8px;
-      width: 100%;
-      border: none;
-    }
-
-    .radio-wrapper {
-      float: left;
-      margin-right: 16px;
-      width: 36px;
-      height: 36px;
-      background-color: #fff;
-      border-radius: 32px;
-      cursor: pointer;
-    }
-
-    .radio-wrapper.active:after {
-      content: ' ';
-      display: block;
-      margin: 6px;
-      width: 24px;
-      height: 24px;
-      background-color: #FB561D;
-      border-radius: 24px;
-    }
-
-    .radio-wrapper > input {
-      display: none;
-    }
-
-    .input-meal {
-      width: 100%;
-      height: 96px;
-      text-align: center;
-      color: #375066;
-      background-color: transparent;
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      border: none;
-    }
-
-    .input-meal.input-meal-beef {
-      background-image: url(/images/beef.svg);
-    }
-
-    .input-meal.input-meal-fish {
-      background-image: url(/images/fish.svg);
-    }
-
-    .input-meal.input-meal-veggie {
-      background-image: url(/images/veggie.svg);
-    }
-
-    .input-submit {
-      display: inline-block;
-      padding: 16px 24px;
-      font-family: 'Mission Gothic';
-      font-size: 32px;
-      text-transform: uppercase;
-      color: #FB561D;
-      background-color: transparent;
-      border: 4px solid #FB561D;
-    }
-
-    .input-label {
-      display: block;
-      line-height: 36px;
-      font-size: 24px;
-      font-family: 'Roboto Slab';
-      font-weight: normal;
-      color: #375066;
-      cursor: pointer;
-    }
-
-    #input-selfie {
-      display: none;
-    }
-
-    #input-selfie-icon {
-      margin-bottom: 8px;
-      max-width: 96px;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/rsvp.css">
 </head>
 <body class="page-story">
 
@@ -119,8 +28,7 @@
       action="<?php echo $upload_url ?>"
       method="POST"
       enctype="multipart/form-data"
-      class="container"
-      >
+      class="container">
 
     <div class="row">
       <div class="col-xs-12">
@@ -208,6 +116,7 @@
           <div class="col-xs-4">
             <input
                 type="text"
+                name="meal_beef"
                 class="input-meal input-meal-beef"
                 id="input-meal-beef" />
             <label
@@ -219,6 +128,7 @@
           <div class="col-xs-4">
             <input
                 type="text"
+                name="meal_fish"
                 class="input-meal input-meal-fish"
                 id="input-meal-fish" />
             <label
@@ -230,6 +140,7 @@
           <div class="col-xs-4">
             <input
                 type="text"
+                name="meal_veggie"
                 class="input-meal input-meal-veggie"
                 id="input-meal-veggie" />
             <label
