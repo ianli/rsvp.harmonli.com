@@ -117,7 +117,9 @@
   <form
       action="<?php echo $upload_url ?>"
       method="POST"
-      class="container">
+      enctype="multipart/form-data"
+      class="container"
+      >
 
     <div class="row">
       <div class="col-xs-12">
