@@ -358,12 +358,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script>
     $(function() {
+      // Clicking on .radio-wrapper toggles the checked property
+      // of the wrapped input.
       $('.radio-wrapper').click(function() {
-        var $this = $(this);
-        var $radio = $this.find('input');
+        var $radio = $(this).find('input');
         var checked = $radio.prop('checked');
-
-        console.log('checked');
 
         $radio
             .prop('checked', !checked)
@@ -385,16 +384,19 @@
           var $wrapper = $this.parent();
           var name = $this.attr('name');
 
-          console.log($this.prop('checked'));
-
+          // Cycle through all .radio-wrapper elements.
+          // If .radio-wrapper > .input has the same name as the .input
+          // that just changed, then mark the wrapper as active.
+          // Otherwise, UN-mark the wrapper as active.
           $('.radio-wrapper').each(function() {
-            var $radio = $(this).children('input');
+            var $this = $(this);
+            var $radio = $this.children('input');
 
             if (name == $radio.attr('name')) {
               if ($radio.prop('checked')) {
-                $(this).addClass('active');
+                $this.addClass('active');
               } else {
-                $(this).removeClass('active');
+                $this.removeClass('active');
               }
             }
           });
