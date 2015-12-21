@@ -1,0 +1,5 @@
+build
+content/build
+node_modules
+*.pyc
+v1
