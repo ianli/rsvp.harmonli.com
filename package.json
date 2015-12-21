@@ -1,0 +1,11 @@
+{
+  "name": "rsvp-harmonli",
+  "version": "1.0.0",
+  "description": "RSVP to Beth & Ian's Wedding",
+  "author": "Ian Li <ianli@ianli.com>",
+  "private": true,
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-gae": "0.0.4"
+  }
+}
