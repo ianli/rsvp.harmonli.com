@@ -20,9 +20,12 @@
   $email_message = '';
 
   $selfie = [];
-  if (in_array('selfie', $_FILES)) {
+  if (array_key_exists('selfie', $_FILES)) {
     $selfie['name'] = $_FILES['selfie']['name'];
-    $selfie['data'] = file_get_contents($_FILES['selfie']['tmp_name']);
+    $selfie['tmp_name'] = $_FILES['selfie']['tmp_name'];
+    $selfie['data'] = file_get_contents($selfie['tmp_name']);
+    $selfie['type'] = $_FILES['selfie']['type'];
+
     $selfie['size'] = $_FILES['selfie']['size'];
 
     // If selfie size is more than 5MB...
