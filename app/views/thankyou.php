@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab">
   <link rel="stylesheet" href="http://wedding.harmonli.com/fonts/mission-gothic/stylesheet.css">
   <link rel="stylesheet" href="http://wedding.harmonli.com/css/main.css">
+  <link rel="stylesheet" href="/css/rsvp.css">
 </head>
 <body class="page-story">
 
@@ -20,55 +21,114 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <h1>Thank you!</h1>
+        <h1>RSVP sent</h1>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12">
-        <h2>Your RSVP is sent</h2>
+        <h2>Thanks for the message</h2>
 
         <div class="space-32"></div>
 
-        <p>
-          <b>Guest 1:</b> <?php echo $submitted['guest1']; ?>
-        </p>
+        <div class="imageframe-169"
+             style="background-image:url('/images/tiffanys-phone.jpg')"></div>
 
-        <p>
-          <b>Guest 2:</b> <?php echo $submitted['guest2']; ?>
-        </p>
+        <div class="space-32"></div>
 
-        <p>
-          <b>Coming:</b> <?php echo $submitted['coming']; ?>
-        </p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>
+                <b>Guest 1:</b>
+              </td>
+              <td>
+                <?php echo $submitted['guest1']; ?>
+              </td>
+            </tr>
 
-        <p>
-          <b>Meal (beef):</b> <?php echo $submitted['meal_beef']; ?>
-        </p>
+            <tr>
+              <td>
+                <b>Guest 2:</b>
+              </td>
+              <td>
+                <?php echo $submitted['guest2']; ?>
+              </td>
+            </tr>
 
-        <p>
-          <b>Meal (fish):</b> <?php echo $submitted['meal_fish']; ?>
-        </p>
+            <tr>
+              <td>
+                <b>Coming:</b>
+              </td>
+              <td>
+                <?php echo $submitted['coming']; ?>
+              </td>
+            </tr>
 
-        <p>
-          <b>Meal (veggie):</b> <?php echo $submitted['meal_veggie']; ?>
-        </p>
+            <tr>
+              <td>
+                <b>Meal (beef):</b>
+              </td>
+              <td>
+                <?php echo $submitted['meal_beef']; ?>
+              </td>
+            </tr>
 
-        <p>
-          <b>Dietary restrictions:</b> <?php echo $submitted['dietary_restrictions']; ?>
-        </p>
+            <tr>
+              <td>
+                <b>Meal (fish):</b>
+              </td>
+              <td>
+                <?php echo $submitted['meal_fish']; ?>
+              </td>
+            </tr>
 
-        <p>
-          <b>Brunch:</b> <?php echo $submitted['brunch']; ?>
-        </p>
+            <tr>
+              <td>
+                <b>Meal (veggie):</b>
+              </td>
+              <td>
+                <?php echo $submitted['meal_veggie']; ?>
+              </td>
+            </tr>
 
-        <p>
-          <b>Selfie:</b> <?php echo empty($selfie) ? 'No' : 'Yes'; ?>
-        </p>
+            <tr>
+              <td>
+                <b>Dietary restrictions:</b>
+              </td>
+              <td>
+                <?php echo $submitted['dietary_restrictions']; ?>
+            </td>
+            </tr>
 
-        <p>
-          <b>Song:</b> <?php echo $submitted['song']; ?>
-        </p>
+            <tr>
+              <td>
+                <b>Brunch:</b>
+              </td>
+              <td>
+                <?php echo $submitted['brunch']; ?>
+            </td>
+            </tr>
+
+            <tr>
+              <td>
+                <b>Selfie:</b>
+              </td>
+              <td>
+                <?php echo empty($selfie) ? 'No' : 'Yes'; ?>
+            </td>
+            </tr>
+
+            <tr>
+              <td>
+                <b>Song:</b>
+              </td>
+              <td>
+                <?php echo $submitted['song']; ?>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
         <div class="space-32"></div>
 

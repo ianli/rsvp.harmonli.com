@@ -92,3 +92,7 @@
   max-width: 96px;
   cursor: pointer;
 }
+
+.table > tbody > tr > td:first-child {
+  width: 50%;
+}

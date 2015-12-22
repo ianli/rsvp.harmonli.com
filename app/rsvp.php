@@ -339,33 +339,33 @@
         reader.readAsDataURL(event.target.files[0]);
       });
 
-      $('#form-rsvp').submit(function(event) {
-        if (!$('input[name=guest1]').val()) {
-          location.hash = 'guest-field';
-          alert('You must write at least one name.');
-          return false;
-        }
+      // $('#form-rsvp').submit(function(event) {
+      //   if (!$('input[name=guest1]').val()) {
+      //     location.hash = 'guest-field';
+      //     alert('You must write at least one name.');
+      //     return false;
+      //   }
 
-        if (!$('input[name=coming]:checked').val()) {
-          location.hash = 'coming-field';
-          alert('You must answer whether you\'re coming or not.');
-          return false;
-        }
+      //   if (!$('input[name=coming]:checked').val()) {
+      //     location.hash = 'coming-field';
+      //     alert('You must answer whether you\'re coming or not.');
+      //     return false;
+      //   }
 
-        if (!$('input[name=meal_beef]').val() &&
-            !$('input[name=meal_fish]').val() &&
-            !$('input[name=meal_veggie]').val()) {
-          location.hash = 'meal-field';
-          alert('You must select a meal for each guest.');
-          return false;
-        }
+      //   if (!$('input[name=meal_beef]').val() &&
+      //       !$('input[name=meal_fish]').val() &&
+      //       !$('input[name=meal_veggie]').val()) {
+      //     location.hash = 'meal-field';
+      //     alert('You must select a meal for each guest.');
+      //     return false;
+      //   }
 
-        if (!$('input[name=brunch]:checked').val()) {
-          location.hash = 'brunch-field';
-          alert('You must answer whether you\'re attending brunch.');
-          return false;
-        }
-      });
+      //   if (!$('input[name=brunch]:checked').val()) {
+      //     location.hash = 'brunch-field';
+      //     alert('You must answer whether you\'re attending brunch.');
+      //     return false;
+      //   }
+      // });
     });
   </script>
 
