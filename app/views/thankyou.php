@@ -63,22 +63,12 @@
         </p>
 
         <p>
-          <b>Song:</b> <?php echo $submitted['song']; ?>
+          <b>Selfie:</b> <?php echo empty($selfie) ? 'No' : 'Yes'; ?>
         </p>
 
-        <?php if (!empty($selfie)) { ?>
-          <p>
-            <b>Selfie:</b><br>
-            <?php
-              $image64 = base64_encode($selfie['data']);
-              $filetype = $selfie['type'];
-              $src = 'data: ' . $filetype . ';base64,' . $image64;
-            ?>
-            <img
-                src="<?php echo $src; ?>"
-                width="96" />
-          </p>
-        <?php } ?>
+        <p>
+          <b>Song:</b> <?php echo $submitted['song']; ?>
+        </p>
 
         <div class="space-32"></div>
 

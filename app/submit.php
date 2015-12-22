@@ -3,7 +3,8 @@
   // https://cloud.google.com/appengine/docs/php/mail/#PHP_Sending_mail_in_PHP
   // http://www.html-form-guide.com/email-form/php-email-form-attachment.html
 
-  use \google\appengine\api\mail\Message;
+  use google\appengine\api\cloud_storage\CloudStorageTools;
+  use google\appengine\api\mail\Message;
 
   $submitted = filter_var_array($_POST, FILTER_SANITIZE_SPECIAL_CHARS);
 
