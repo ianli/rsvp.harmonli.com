@@ -17,6 +17,7 @@
   $dietary_restrictions = $submitted['dietary_restrictions'] || '';
   $brunch = $submitted['brunch'] || '';
   $song = $submitted['song'] || '';
+  $message = $submitted['message'] || '';
 
   $email_message = '';
 
@@ -32,7 +33,7 @@
 
     // If selfie size is more than 5MB...
     if ($selfie['size'] > 5242880) {
-      $error_message = 'Size of selfie picture is too big (more than 5MB).';
+      $error_message = 'Size of the selfie picture is too big (more than 5MB).';
       include 'views/error.php';
       exit;
     }
@@ -48,6 +49,7 @@ meal_veggie: {$submitted['meal_veggie']}
 dietary_restrictions: {$submitted['dietary_restrictions']}
 brunch: {$submitted['brunch']}
 song: {$submitted['song']}
+message: {$submitted['message']}
 EMAIL;
 
   try {
@@ -66,7 +68,8 @@ EMAIL;
     include 'views/thankyou.php';
   } catch (Exception $e) {
     $error_message = <<<HTML
-The following error occurred when sending to Beth &amp; Ian:<br><br>
+Couldn't send your message to Beth &amp; Ian.
+The following error occurred:<br><br>
 $e
 HTML;
 

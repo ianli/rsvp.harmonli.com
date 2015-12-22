@@ -12,6 +12,7 @@
   padding: 8px;
   width: 100%;
   border: none;
+  border-radius: 0;
 }
 
 .radio-wrapper {
@@ -83,6 +84,13 @@
   cursor: pointer;
 }
 
+.input-textarea {
+  padding: 8px;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+}
+
 #input-selfie {
   display: none;
 }
@@ -94,5 +102,5 @@
 }
 
 .table > tbody > tr > td:first-child {
-  width: 50%;
+  width: 33%;
 }

@@ -21,13 +21,27 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <h1>RSVP sent</h1>
+        <h1>RSVP Sent</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-9">
+        <div class="leadquote">
+          As I write this letter,<br>
+          Send my love to you.
+          <div class="text-right">
+            &mdash;
+            <a href="https://www.youtube.com/watch?v=6jLCDlHsVk4">P.S. I Love You</a>,
+            Beatles
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12">
-        <h2>Thanks for the message</h2>
+        <h2>Thanks for the message!</h2>
 
         <div class="space-32"></div>
 
@@ -35,6 +49,12 @@
              style="background-image:url('/images/tiffanys-phone.jpg')"></div>
 
         <div class="space-32"></div>
+
+        <p>
+          Beth and Ian will receive this message:
+        </p>
+
+        <div class="space-16"></div>
 
         <table class="table">
           <tbody>
@@ -125,6 +145,15 @@
               </td>
               <td>
                 <?php echo $submitted['song']; ?>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <b>Message:</b>
+              </td>
+              <td>
+                <?php echo $submitted['message']; ?>
               </td>
             </tr>
           </tbody>
