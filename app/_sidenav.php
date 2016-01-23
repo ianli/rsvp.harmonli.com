@@ -24,6 +24,12 @@
   </li>
 
   <li>
+    <a href="http://wedding.harmonli.com/registry.html">
+      Registry
+    </a>
+  </li>
+
+  <li>
     <a href="http://wedding.harmonli.com/contact.html">
       Contact
     </a>
