@@ -55,7 +55,7 @@ EMAIL;
   try {
     $message = new Message();
     $message->setSender('ianarli@gmail.com');
-    $message->addTo('ianarli@gmail.com');
+    $message->addTo('bethandian@harmonli.com');
     $message->setSubject("RSVP to Beth & Ian's Wedding");
     $message->setTextBody($email_message);
 
