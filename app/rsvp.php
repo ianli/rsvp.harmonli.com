@@ -86,7 +86,8 @@
             for="coming-yes"
             class="input-label"
             style="padding-left: 52px;">
-          Yay, let's celebrate!
+          Yes, <small>we'll leave our hearts<br>
+          in San&nbsp;Francisco.</small>
         </label>
 
         <span class="space-12"></span>
@@ -103,7 +104,8 @@
             for="coming-no"
             class="input-label"
             style="padding-left: 52px;">
-          Sorry, can't make it.
+          No, <small>we don't know the way<br>
+          to San&nbsp;Jose.</small>
         </label>
 
         <div class="space-64"></div>
@@ -262,7 +264,7 @@
 
         <div class="space-64"></div>
 
-        <h2>Message</h2>
+        <h2>Message us</h2>
 
         <div class="space-24"></div>
 
