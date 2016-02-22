@@ -1,4 +1,5 @@
 <ul class="sidenav">
+
   <li>
     <a href="http://wedding.harmonli.com/">
       Home
@@ -41,4 +42,11 @@
       RSVP
     </a>
   </li>
+
+  <li>
+    <a href="https://goo.gl/photos/JbyEQuGEmBuPA39j9">
+      Photos
+    </a>
+  </li>
+
 </ul>
