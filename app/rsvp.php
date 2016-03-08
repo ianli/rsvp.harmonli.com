@@ -40,7 +40,6 @@
     <div class="row">
       <div class="col-xs-12 col-sm-9">
         <div class="leadquote">
-          Kindly respond by February 29, 2016.<br>
           First 20 will receive a prize in the mail.
         </div>
       </div>
